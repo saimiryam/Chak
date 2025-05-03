@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>מתג סודי</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            transition: background 1s ease-in-out;
+        }
+        .switch-container {
+            margin-top: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .toggle-image {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .toggle-image:active {
+            transform: scale(0.95);
+        }
+        #message {
+            display: none;
+            font-size: 3.5em;
+            margin-top: 40px;
+            font-weight: bold;
+            color: yellow;
+            text-shadow: 2px 2px 8px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="switch-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" alt="switch" class="toggle-image" onclick="triggerEvil()">
+    </div>
+    <div id="message">😈 תסתמי את הפה שלך</div>
+
+    <!-- Calm background music -->
+    <audio id="calmMusic" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Evil laugh -->
+    <audio id="evilSound" src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg"></audio>
+
+    <script>
+        function triggerEvil() {
+            document.getElementById('message').style.display = 'block';
+            document.body.style.background = "url('https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif') no-repeat center center fixed";
+            document.body.style.backgroundSize = "cover";
+            document.getElementById('calmMusic').pause();
+            document.getElementById('evilSound').play();
+        }
+    </script>
+</body>
+</html>
